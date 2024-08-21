@@ -2,32 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --header-height: 80px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+
+  header {
+    @apply fixed top-0 z-10 flex w-full h-[var(--header-height)] items-center justify-between px-4 py-4 transition-all lg:px-6 xl:px-10 bg-myGrayDark lg:py-6 text-myWhite text-xl duration-200;
+  }
+
+  footer {
+    @apply relative w-full items-center justify-between px-4 py-1 transition-all lg:px-10 bg-myGrayDark text-myWhite  border-t-2;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer components {
+  .headerLink {
+    @apply max-w-xs mx-auto p-2 cursor-pointer transition duration-300 text-xl hover:text-myGrayLight capitalize;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .menuDesktop {
+    @apply w-full lg:relative lg:flex lg:space-x-1  xl:space-x-2 lg:min-h-0 lg:top-0 lg:px-0 lg:py-0 lg:space-y-0 lg:translate-x-0 lg:text-base;
+  }
+
+  .menuMobile {
+    @apply fixed left-0 w-2/3 top-[var(--header-height)]  min-h-[calc(100vh-var(--header-height))] px-8 pt-8 space-y-4 bg-myGrayDark transform text-left transition duration-300;
+  }
+  .title {
+    @apply text-3xl tracking-widest text-myColor1 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
   }
 }
