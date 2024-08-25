@@ -9,7 +9,7 @@ const allViews = [
       'https://public.tableau.com/views/CursoVisualizaciondeDataTutorials/CarSales?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
       'https://public.tableau.com/views/YTBaraan/CustomerDashboard?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
       'https://public.tableau.com/views/HRDashboardMyVersion/HRNewDetails?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
-      'https://public.tableau.com/views/PizzaDashBoard/DBResumen?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
+      'https://public.tableau.com/views/PizzaDashBoard/DBTemplate1?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
     ],
   },
 ];

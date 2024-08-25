@@ -10,7 +10,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-(var(--header-height)))] flex justify-center items-center ">
+    <section className="relative min-h-[calc(100vh-(var(--header-height)))] flex flex-col justify-center items-center ">
       <motion.h1
         animate={{ y: 0 }}
         initial={{ opacity: 0, y: 250 }}
